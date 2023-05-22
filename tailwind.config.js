@@ -5,7 +5,8 @@ module.exports = {
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
-	],
+    './src/**/*.{js,jsx,ts,tsx}'
+  ],
   theme: {
     container: {
       center: true,
@@ -15,6 +16,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        display: ["var(--font-satoshi)", "system-ui", "sans-serif"],
+        default: ["var(--font-inter)", "system-ui", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -48,7 +53,7 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        },
+        }
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -56,6 +61,16 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        text: {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
+          },
+        },
         "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -66,6 +81,7 @@ module.exports = {
         },
       },
       animation: {
+        "text": 'text 4s ease infinite',
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
