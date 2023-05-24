@@ -61,7 +61,18 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        text: {
+        "tilt": {
+          '0%, 50%, 100%': {
+            transform: 'rotate(0deg)',
+          },
+          '25%': {
+            transform: 'rotate(0.9deg)',
+          },
+          '75%': {
+            transform: 'rotate(-0.9deg)',
+          },
+        },
+        "text": {
           '0%, 100%': {
             'background-size': '200% 200%',
             'background-position': 'left center',
@@ -81,6 +92,7 @@ module.exports = {
         },
       },
       animation: {
+        "tilt": 'tilt 4s ease infinite linear',
         "text": 'text 4s ease infinite',
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
